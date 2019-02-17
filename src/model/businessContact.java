@@ -17,8 +17,6 @@ public class businessContact extends baseContact {
 		this.website = website; 
 		this.description = description; 
 		
-		System.out.println("New Business Contact: " + id +" "+ name +" "+ phoneNumber +" "+ emailAddress +" "+  location_id +" "+ photo_id + " " + this.businessHours +" "+ this.website +" "+ this.description); 
-
 	}
 
 	public String getBusinessHours() {
@@ -53,6 +51,16 @@ public class businessContact extends baseContact {
 	public int compareTo(baseContact o) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	public String toString() { 
+		return this.getName() +" "+ this.getPhoneNumber() +" "+ this.getEmailAddress() +" "+  this.getLocation_id() +" "+ this.getPhoto_id() + " " + this.businessHours +" "+ this.website +" "+ this.description; 
+
+	}
+	
+	public businessContact findById(int id) { 
+		businessContact bc = new businessContact(this.getId(), this.getName(), this.getPhoneNumber(), this.getEmailAddress(), this.getLocation_id(), this.getPhoto_id(), this.businessHours, this.website, this.description); 
+		return bc; 
 	}
 
 }

@@ -101,16 +101,20 @@ public class baseContact implements Comparable<baseContact> {
 	@Override
 	public int compareTo(baseContact o) {
 		int compareName = this.name.compareTo(o.name); 
-		int compareId = this.id - o.id; 
 
 		//if the names match, compare id
 		if (compareName == 0) { 
-			return compareId; 
+			return compareName; 
 		}
 		//if names do not match
 		else { 
 			return compareName; 
 		}
+	}
+	
+	public baseContact findById(int id) { 
+		baseContact bc = new baseContact(this.id, this.name, this.phoneNumber, this.emailAddress, this.location_id, this.photo_id); 
+		return bc; 
 	}
 	
 }

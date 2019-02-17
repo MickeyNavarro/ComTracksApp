@@ -7,9 +7,10 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class addressBook {
+public class addressBook{
 	private List<baseContact> listOfContacts; 
 	
 	public addressBook() { 
@@ -56,7 +57,7 @@ public class addressBook {
 	    }
 		return null;
 	}
-	
+
 	public ArrayList<baseContact> search(String property) { 
 		ArrayList<baseContact> results = new ArrayList<baseContact>(); 
 		for (baseContact contact : listOfContacts) {
@@ -67,4 +68,15 @@ public class addressBook {
 		return results; 
 	}
 	
+	//method to sort alphabetically 
+	//TODO: check this method
+	public ArrayList<baseContact> sortByAlpha() { 
+		ArrayList<baseContact> results = new ArrayList<baseContact>();
+		Collections.sort(this.listOfContacts);
+		for (baseContact contact : listOfContacts) {
+	        results.add(contact); 
+	    }
+		return results; 
+		}
+	 
 }

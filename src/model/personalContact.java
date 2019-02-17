@@ -19,9 +19,6 @@ public class personalContact extends baseContact {
 		this.dateOfBirth = dateOfBirth; 
 		this.relation = relation; 
 		this.nickname = nickname; 
-		
-		System.out.println("New Personal Contact: " + id +" "+ name +" "+ phoneNumber +" "+ emailAddress +" "+  location_id +" "+ photo_id + " " + this.dateOfBirth +" "+ this.relation +" "+ this.nickname); 
-
 	}
 
 	public String getDateOfBirth() {
@@ -54,6 +51,14 @@ public class personalContact extends baseContact {
 		return 0;
 	}
 	
+	public String toString() { 
+		return this.getName() +" "+ this.getPhoneNumber() +" "+ this.getEmailAddress() +" "+  this.getLocation_id() +" "+ this.getPhoto_id() + " " + this.dateOfBirth +" "+ this.nickname +" "+ this.relation; 
+
+	}
 	
+	public personalContact findById(int id) { 
+		personalContact bc = new personalContact(this.getId(), this.getName(), this.getPhoneNumber(), this.getEmailAddress(), this.getLocation_id(), this.getPhoto_id(), this.dateOfBirth, this.nickname, this.relation); 
+		return bc; 
+	}
 
 }
